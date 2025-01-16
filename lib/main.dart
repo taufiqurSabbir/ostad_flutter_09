@@ -244,104 +244,104 @@ class Home extends StatelessWidget {
 
         
             ///Flutter old class
-            // Center(
-            //   child: ElevatedButton(
-            //       style: ElevatedButton.styleFrom(
-            //         backgroundColor: Colors.green,
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(15),
-            //         ),
-            //       ),
-            //       onPressed: (){
-            //     print("This is a button");
-            //   }, child:
-            //
-            //       Text("Send",style: TextStyle(color: Colors.white,fontSize: 25),),
-            //
-            //
-            //   ),
-            // ),
-            // Icon(Icons.add_a_photo,size: 50,color: Colors.red,),
-            // TextButton(onPressed: (){
-            //   print("I'm text button");
-            // }, child: Text("Click me",style: TextStyle(color: Colors.blue,fontSize: 25),)),
-            // IconButton(onPressed: (){
-            //   print("I'm icon button");
-            // }, icon: Icon(Icons.add_a_photo,size: 50,color: Colors.red,)),
-            //
-            //
-            // InkWell(
-            //   onTap: (){
-            //     print("I'm inkwell");
-            //   },
-            //   onHover: (value){
-            //     print("I'm inkwell hover");
-            //   },
-            //   onLongPress: (){
-            //     print("I'm inkwell long press");
-            //   },
-            //   child: Container(
-            //     height: 200,
-            //     width: 200,
-            //     margin: EdgeInsets.only(top: 50),
-            //    alignment: Alignment.center,
-            //     decoration:BoxDecoration(
-            //       color: Colors.deepPurpleAccent,
-            //       borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
-            //       border: Border.all(color: Colors.black,width: 5),
-            //       gradient: LinearGradient(colors: [Colors.yellow.shade300,Colors.orange.withOpacity(0.5),Colors.red,Colors.black],
-            //       begin: Alignment.topLeft,
-            //       end: Alignment.bottomRight,
-            //       ),
-            //       boxShadow: [
-            //           BoxShadow(
-            //             color: Colors.grey,
-            //             blurRadius: 10,
-            //             spreadRadius: 5,
-            //             offset: Offset(5,5)
-            //           )
-            //       ]
-            //     ) ,
-            //     child: Text("This is a container",style: TextStyle(color: Colors.blue,fontSize: 25),) ,
-            //   ),
-            // ),
-            //
-            // GestureDetector(
-            //   onTap: (){
-            //     print("I'm GestureDetector");
-            //   },
-            //   onDoubleTap: (){
-            //     print("I'm GestureDetector double tap");
-            //   },
-            //
-            //   onLongPress: (){
-            //     print("I'm GestureDetector long press");
-            //   },
-            //   child: Container(
-            //     height: 200,
-            //     width: 200,
-            //     margin: EdgeInsets.only(top: 50),
-            //     alignment: Alignment.center,
-            //     decoration:BoxDecoration(
-            //         color: Colors.deepPurpleAccent,
-            //         borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
-            //         border: Border.all(color: Colors.black,width: 5),
-            //         gradient: LinearGradient(colors: [Colors.green.shade300,Colors.orange.withOpacity(0.5),Colors.black],
-            //           begin: Alignment.topLeft,
-            //           end: Alignment.bottomRight,
-            //         ),
-            //         boxShadow: [
-            //           BoxShadow(
-            //               color: Colors.grey,
-            //               blurRadius: 10,
-            //               spreadRadius: 10,
-            //               offset: Offset(0,5)
-            //           )
-            //         ]
-            //     ) ,
-            //     child: Text("This is a container",style: TextStyle(color: Colors.blue,fontSize: 25),) ,
-            //   ),
-            // )
+            Center(
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  onPressed: (){
+                print("This is a button");
+              }, child:
+
+                  Text("Send",style: TextStyle(color: Colors.white,fontSize: 25),),
+
+
+              ),
+            ),
+            Icon(Icons.add_a_photo,size: 50,color: Colors.red,),
+            TextButton(onPressed: (){
+              print("I'm text button");
+            }, child: Text("Click me",style: TextStyle(color: Colors.blue,fontSize: 25),)),
+            IconButton(onPressed: (){
+              print("I'm icon button");
+            }, icon: Icon(Icons.add_a_photo,size: 50,color: Colors.red,)),
+
+
+            InkWell(
+              onTap: (){
+                print("I'm inkwell");
+              },
+              onHover: (value){
+                print("I'm inkwell hover");
+              },
+              onLongPress: (){
+                print("I'm inkwell long press");
+              },
+              child: Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(top: 50),
+               alignment: Alignment.center,
+                decoration:BoxDecoration(
+                  color: Colors.deepPurpleAccent,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+                  border: Border.all(color: Colors.black,width: 5),
+                  gradient: LinearGradient(colors: [Colors.yellow.shade300,Colors.orange.withOpacity(0.5),Colors.red,Colors.black],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  ),
+                  boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 10,
+                        spreadRadius: 5,
+                        offset: Offset(5,5)
+                      )
+                  ]
+                ) ,
+                child: Text("This is a container",style: TextStyle(color: Colors.blue,fontSize: 25),) ,
+              ),
+            ),
+
+            GestureDetector(
+              onTap: (){
+                print("I'm GestureDetector");
+              },
+              onDoubleTap: (){
+                print("I'm GestureDetector double tap");
+              },
+
+              onLongPress: (){
+                print("I'm GestureDetector long press");
+              },
+              child: Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.only(top: 50),
+                alignment: Alignment.center,
+                decoration:BoxDecoration(
+                    color: Colors.deepPurpleAccent,
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
+                    border: Border.all(color: Colors.black,width: 5),
+                    gradient: LinearGradient(colors: [Colors.green.shade300,Colors.orange.withOpacity(0.5),Colors.black],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 10,
+                          spreadRadius: 10,
+                          offset: Offset(0,5)
+                      )
+                    ]
+                ) ,
+                child: Text("This is a container",style: TextStyle(color: Colors.blue,fontSize: 25),) ,
+              ),
+            )
           ],
         ),
       ),
