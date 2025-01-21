@@ -16,7 +16,7 @@ class myApp extends StatelessWidget {
             color: Colors.red,
             centerTitle: true,
           ),
-          scaffoldBackgroundColor: Colors.grey,
+          scaffoldBackgroundColor: Colors.white,
           elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepPurpleAccent,
@@ -129,13 +129,15 @@ class Home extends StatelessWidget {
                           itemCount: 7,
                           itemBuilder: (context, index) {
                             return Container(
-
                               decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(25)
-                              ),
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(25)),
                               child: Center(
-                                  child: Icon(Icons.mobile_friendly,size: 40,color: Colors.white,)),
+                                  child: Icon(
+                                Icons.mobile_friendly,
+                                size: 40,
+                                color: Colors.white,
+                              )),
                             );
                           }),
                     )
@@ -155,7 +157,8 @@ class Home extends StatelessWidget {
 }
 
 class UserInfo extends StatelessWidget {
-  const UserInfo({super.key});
+  final String? name;
+  const UserInfo({super.key, this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -165,6 +168,10 @@ class UserInfo extends StatelessWidget {
       ),
       body: Column(
         children: [
+          Text(
+            name!,
+            style: TextStyle(fontSize: 30, color: Colors.green),
+          ),
           ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -173,7 +180,11 @@ class UserInfo extends StatelessWidget {
           ElevatedButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Page1()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Page1(
+                              userName: name ?? '',
+                            )));
               },
               child: Text("Page1"))
         ],
@@ -183,7 +194,8 @@ class UserInfo extends StatelessWidget {
 }
 
 class Page1 extends StatelessWidget {
-  const Page1({super.key});
+  final String userName;
+  const Page1({super.key, required this.userName});
 
   @override
   Widget build(BuildContext context) {
