@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 
 import 'Home.dart';
 import 'moduleNineThree.dart';
+import 'module_11_class_1.dart';
 import 'module_9_class_1.dart';
 import 'module_9_class_2.dart';
 
@@ -30,7 +31,7 @@ class myApp extends StatelessWidget {
                       backgroundColor: Colors.deepPurpleAccent,
                       foregroundColor: Colors.white))),
           title: 'Ostad Flutter app',
-          home: Moduleninethree(),
+          home: Module11Class1(),
         );
       }
     );
