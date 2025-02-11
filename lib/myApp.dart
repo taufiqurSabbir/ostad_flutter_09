@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:hello_world/waterTracker.dart';
 import 'package:sizer/sizer.dart';
 
 import 'Home.dart';
@@ -32,7 +33,7 @@ class myApp extends StatelessWidget {
                       backgroundColor: Colors.deepPurpleAccent,
                       foregroundColor: Colors.white))),
           title: 'Ostad Flutter app',
-          home: Calculatorapp(),
+          home: Watertracker(),
         );
       }
     );
