@@ -8,6 +8,7 @@ import 'calculatorApp.dart';
 import 'moduleNineThree.dart';
 import 'module_11_class_1.dart';
 import 'module_12_class_1.dart';
+import 'module_12_class_2.dart';
 import 'module_9_class_1.dart';
 import 'module_9_class_2.dart';
 
@@ -19,14 +20,15 @@ class myApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           useInheritedMediaQuery: true,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
           theme: ThemeData(
-            brightness: Brightness.dark,
-              primaryColor: Colors.red,
+            brightness: Brightness.light,
+              primaryColor: Colors.orange,
               appBarTheme: AppBarTheme(
-                color: Colors.red,
+                color: Colors.orange,
                 centerTitle: true,
               ),
 
@@ -35,7 +37,7 @@ class myApp extends StatelessWidget {
                       backgroundColor: Colors.deepPurpleAccent,
                       foregroundColor: Colors.white))),
           title: 'Ostad Flutter app',
-          home: ExpenseTracker(),
+          home: TodoScreen(),
         );
       }
     );
