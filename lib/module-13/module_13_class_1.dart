@@ -12,17 +12,26 @@ class Module13Class1 extends StatefulWidget {
 class _Module13Class1State extends State<Module13Class1> {
 final ProductController productController = ProductController();
 
-  void productDialog() {
+  void productDialog({String ? id, String ? name,int ? qty,String ? img,int ? unitPrice, int ? totalPrice}) {
+
+
     TextEditingController productNameController = TextEditingController();
     TextEditingController productcodeController = TextEditingController();
     TextEditingController productQtyController = TextEditingController();
     TextEditingController productImageController = TextEditingController();
     TextEditingController productUnitPriceController = TextEditingController();
     TextEditingController productTotalPriceController = TextEditingController();
+
+    productNameController.text = name ?? '';
+    productQtyController.text = qty.toString() ?? '';
+    productImageController.text = img ?? '';
+    productUnitPriceController.text = unitPrice.toString() ?? '';
+    productTotalPriceController.text = totalPrice.toString() ?? '';
+
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text('Add product'),
+              title: Text(id == null ? 'Add product' : 'Update product'),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -56,13 +65,20 @@ final ProductController productController = ProductController();
                      }, child: Text('Close')),
                       SizedBox(width: 5,),
                       ElevatedButton(onPressed: (){
-                        setState(() {
-                          productController.createProduct(productNameController.text, productImageController.text, int.parse(productQtyController.text), int.parse(productUnitPriceController.text), int.parse(productTotalPriceController.text));
+
+                          if(id == null){
+                            productController.createProduct(productNameController.text, productImageController.text, int.parse(productQtyController.text), int.parse(productUnitPriceController.text), int.parse(productTotalPriceController.text));
+                          }else{
+                            productController.UpdateProduct(id,productNameController.text, productImageController.text, int.parse(productQtyController.text), int.parse(productUnitPriceController.text), int.parse(productTotalPriceController.text));
+
+                          }
+
                           fetchData();
                           Navigator.pop(context);
+                          setState(() {
                         });
 
-                      }, child: Text('Add product')),
+                      }, child: Text(id == null ? 'Add product' : 'Update product')),
                     ],
                   )
                 ],
@@ -103,22 +119,57 @@ final ProductController productController = ProductController();
               child: ListTile(
                 // leading: Image.network(product['Img'],width: 150,fit: BoxFit.contain,),
                 title: Text(
-                  product['ProductName'],
+                  product.productName.toString(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
-                  'price: \$ ${product['UnitPrice']} | Qty: ${product['Qty']}',
+                  'price: \$ ${product.unitPrice} | Qty: ${product.qty}',
                   style: TextStyle(),
                 ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    IconButton(onPressed: ()=> productDialog(), icon: Icon(Icons.edit)),
+                    IconButton(onPressed: ()=> productDialog(
+                      id: product.sId,
+                      name: product.productName,
+                      img: product.img,
+                      qty: product.qty,
+                      unitPrice: product.unitPrice,
+                      totalPrice: product.totalPrice,
+
+                    ), icon: Icon(Icons.edit)),
                     SizedBox(
                       width: 10,
                     ),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+
+
+                            productController.deleteProducts(product.sId.toString()).then((value) {
+                              if (value) {
+                                setState(() {
+                                  fetchData();
+                                });
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text("Product deleted"),
+                                    duration: Duration(seconds: 2),
+
+                                  ),
+                                );
+                              }else{
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text("Something wrong try again"),
+                                    duration: Duration(seconds: 2),
+
+                                  ),
+                                );
+                              }
+                            });
+
+
+                        },
                         icon: Icon(
                           Icons.delete,
                           color: Colors.red,
