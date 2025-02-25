@@ -6,6 +6,7 @@ import 'package:sizer/sizer.dart';
 import 'Home.dart';
 import 'calculatorApp.dart';
 import 'module-13/module_13_class_1.dart';
+import 'module-13/pdf_with_api/pdf_reader.dart';
 import 'moduleNineThree.dart';
 import 'module_11_class_1.dart';
 import 'module_12_class_1.dart';
@@ -39,7 +40,7 @@ class myApp extends StatelessWidget {
                       backgroundColor: Colors.deepPurpleAccent,
                       foregroundColor: Colors.white))),
           title: 'Ostad Flutter app',
-          home: Module13Class1(),
+          home: BookList(),
         );
       }
     );
